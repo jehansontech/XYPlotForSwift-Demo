@@ -17,6 +17,7 @@ struct XYPlotForSwift_DemoApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(dataSources)
+                .preferredColorScheme(.dark)
         }
     }
 
