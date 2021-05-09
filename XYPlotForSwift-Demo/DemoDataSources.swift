@@ -32,7 +32,8 @@ struct SimpleDataSource: XYDataSource {
     var dataSets: [XYDataSet] = [XYDataSet]()
 
     init(_ name: String?) {
-        dataSets.append(RandomWalk(name, Color.red, 0, 1, 0.1, 100))
+        dataSets.append(RandomWalk(name, Color.red, 0, 1, 0.025, 100))
+        dataSets.append(RandomWalk(name, Color.green, 0, 1, 0.025, 100))
     }
 }
 
@@ -50,14 +51,14 @@ struct RandomWalk: XYDataSet {
         self.name = name
         self.color = color
         self.points = [XYPoint]()
-        self.bounds = nil
+        self.bounds = XYRect(x: 0, y: min, width: Double(count), height: max-min)
         addPoints(min, max, fuzzFactor, count)
     }
 
     mutating func addPoints(_ min: Double, _ max: Double, _ fuzzFactor: Double, _ count: Int) {
         let fuzz = -fuzzFactor...fuzzFactor
         var x: Double = 0
-        var y: Double = max - 0.5 * min + Double.random(in: fuzz)
+        var y: Double = min + 0.5 * (max - min) + Double.random(in: fuzz)
         for _ in 0..<count {
             addPoint(x, y)
             x += 1

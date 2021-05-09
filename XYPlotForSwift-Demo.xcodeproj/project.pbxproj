@@ -13,6 +13,8 @@
 		38461ED6263C955E000E889B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38461ED5263C955E000E889B /* Preview Assets.xcassets */; };
 		38461EDF263C9590000E889B /* XYPlotForSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 38461EDE263C9590000E889B /* XYPlotForSwift */; };
 		38A7A9002647509C00784B42 /* DemoDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7A8FF2647509C00784B42 /* DemoDataSources.swift */; };
+		38D4B051264825D400ADEC58 /* PlotSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4B050264825D400ADEC58 /* PlotSelector.swift */; };
+		38D4B053264827CE00ADEC58 /* TickMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4B052264827CE00ADEC58 /* TickMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		38461ED5263C955E000E889B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		38461ED7263C955E000E889B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38A7A8FF2647509C00784B42 /* DemoDataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDataSources.swift; sourceTree = "<group>"; };
+		38D4B050264825D400ADEC58 /* PlotSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotSelector.swift; sourceTree = "<group>"; };
+		38D4B052264827CE00ADEC58 /* TickMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				38461ED7263C955E000E889B /* Info.plist */,
 				38461ED4263C955E000E889B /* Preview Content */,
 				38461ECE263C955D000E889B /* XYPlotForSwift_DemoApp.swift */,
+				38D4B050264825D400ADEC58 /* PlotSelector.swift */,
+				38D4B052264827CE00ADEC58 /* TickMaker.swift */,
 			);
 			path = "XYPlotForSwift-Demo";
 			sourceTree = "<group>";
@@ -150,6 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A7A9002647509C00784B42 /* DemoDataSources.swift in Sources */,
+				38D4B053264827CE00ADEC58 /* TickMaker.swift in Sources */,
+				38D4B051264825D400ADEC58 /* PlotSelector.swift in Sources */,
 				38461ED1263C955D000E889B /* ContentView.swift in Sources */,
 				38461ECF263C955D000E889B /* XYPlotForSwift_DemoApp.swift in Sources */,
 			);
