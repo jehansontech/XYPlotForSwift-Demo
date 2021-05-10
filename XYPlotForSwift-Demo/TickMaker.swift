@@ -6,8 +6,44 @@
 //
 
 import SwiftUI
+import Taconic
 import UIStuffForSwift
 
+
+struct DataBounds {
+
+    var minX: Double = 0
+
+    var maxX: Double {
+        return minX + width
+    }
+
+    var minY: Double = 0
+
+    var maxY: Double {
+        return minY + height
+    }
+
+    var width: Double = 1
+
+    var height: Double = 1
+
+    var fminX: CGFloat {
+        return CGFloat(minX)
+    }
+
+    var fwidth: CGFloat {
+        return CGFloat(width)
+    }
+
+    var fminY: CGFloat {
+        return CGFloat(minY)
+    }
+
+    var fheight: CGFloat {
+        return CGFloat(height)
+    }
+}
 
 struct XTicks: View {
 
@@ -19,16 +55,19 @@ struct XTicks: View {
 
     let formatter: NumberFormatter = NumberFormatter()
 
-    @Binding var dataBounds: CGRect
+    @Binding var dataBounds: DataBounds
 
     var numbers: [Int] {
+        return makeNumbers()
+    }
+
+    func makeNumbers() -> [Int] {
         // TODO
         return [2,20,40,60,80,102]
     }
 
     var magnitude: CGFloat {
-        // TODO
-        return 1 // dataBounds.width
+        return CGFloat(max(orderOfMagnitude(dataBounds.minX), orderOfMagnitude(dataBounds.maxX)))
     }
 
     var body: some View {
@@ -37,9 +76,9 @@ struct XTicks: View {
 
             let t1 = CGAffineTransform
                 .identity
-                .scaledBy(x: proxy.frame(in: .local).width / dataBounds.width,
+                .scaledBy(x: proxy.frame(in: .local).width / dataBounds.fwidth,
                           y: 1)
-                .translatedBy(x: -dataBounds.minX, y: -dataBounds.minY)
+                .translatedBy(x: -dataBounds.fminX, y: -dataBounds.fminY)
 
             ForEach(numbers, id: \.self) { n in
                 Text(formatter.string(for: n)!)
@@ -62,7 +101,7 @@ struct XTicks: View {
 
     }
 
-    init(_ dataBounds: Binding<CGRect>) {
+    init(_ dataBounds: Binding<DataBounds>) {
         self._dataBounds = dataBounds
     }
 }
@@ -77,16 +116,14 @@ struct YTicks: View {
 
     let formatter: NumberFormatter = NumberFormatter()
 
-    @Binding var dataBounds: CGRect
+    @Binding var dataBounds: DataBounds
 
     var numbers: [Int] {
-        // TODO
-        return [1,2,4,6,8,10,11]
+        return makeNumbers()
     }
 
     var magnitude: CGFloat {
-        // TODO
-        return 1 // dataBounds.height / 10
+        return CGFloat(max(orderOfMagnitude(dataBounds.minY), orderOfMagnitude(dataBounds.maxY)))
     }
 
     var body: some View {
@@ -98,8 +135,8 @@ struct YTicks: View {
                 .scaledBy(x: 1, y: -1)
                 .translatedBy(x: 0, y: -proxy.frame(in: .local).height)
                 .scaledBy(x: 1,
-                          y: proxy.frame(in: .local).height / dataBounds.height)
-                .translatedBy(x: 0, y: -dataBounds.minY)
+                          y: proxy.frame(in: .local).height / dataBounds.fheight)
+                .translatedBy(x: 0, y: -dataBounds.fminY)
 
             ForEach(numbers, id: \.self) { n in
                 Text(formatter.string(for: n)!)
@@ -120,10 +157,14 @@ struct YTicks: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
-    init(_ dataBounds: Binding<CGRect>) {
+    init(_ dataBounds: Binding<DataBounds>) {
         self._dataBounds = dataBounds
     }
 
+    func makeNumbers() -> [Int] {
+        // TODO
+        return [1,2,4,6,8,10,11]
+    }
 
     func numberOffset(_ n: Int) -> CGFloat {
         return 2 * tickLength
@@ -148,7 +189,7 @@ struct YTicks: View {
 
 struct Plot: View {
 
-    @Binding var dataBounds: CGRect
+    @Binding var dataBounds: DataBounds
 
     var body: some View {
         ZStack {
@@ -158,9 +199,9 @@ struct Plot: View {
                     .identity
                     .scaledBy(x: 1, y: -1)
                     .translatedBy(x: 0, y: -proxy.frame(in: .local).height)
-                    .scaledBy(x: proxy.frame(in: .local).width / dataBounds.width,
-                              y: proxy.frame(in: .local).height / dataBounds.height)
-                    .translatedBy(x: -dataBounds.minX, y: -dataBounds.minY)
+                    .scaledBy(x: proxy.frame(in: .local).width / dataBounds.fwidth,
+                              y: proxy.frame(in: .local).height / dataBounds.fheight)
+                    .translatedBy(x: -dataBounds.fminX, y: -dataBounds.fminY)
 
                 Path { path in
                     path.addRect(CGRect(x: 12, y: 2, width: 80, height: 8))
@@ -168,6 +209,7 @@ struct Plot: View {
                 }
                 .applying(t1)
                 .stroke()
+                .clipped()
 
             }
             // .coordinateSpace(name: "plot")
@@ -175,57 +217,87 @@ struct Plot: View {
         }
     }
 
-    init(_ dataBounds: Binding<CGRect>) {
+    init(_ dataBounds: Binding<DataBounds>) {
+        self._dataBounds = dataBounds
+    }
+}
+
+struct DataBoundsControls : View {
+
+    @Binding var dataBounds: DataBounds
+
+    @State var group = SettingsGroup().itemStyle(.narrow)
+
+    var body: some View {
+        VStack {
+            RangeSetting("xMin", $dataBounds.minX, $group, -100, 100, 0.1)
+            RangeSetting("width", $dataBounds.width, $group, 0.1, 200, 0.1)
+            RangeSetting("yMin", $dataBounds.minY, $group, -10, 10, 0.1)
+            RangeSetting("height", $dataBounds.height, $group, 0.1, 200, 0.1)
+        }
+    }
+
+    init(_ dataBounds: Binding<DataBounds>) {
         self._dataBounds = dataBounds
     }
 }
 
 struct TickMaker : View {
 
-    @State var dataBounds = CGRect(x: 2, y: 1, width: 100, height: 10)
+    @State var dataBounds = DataBounds(minX: 2, minY: 1, width: 100, height: 10)
 
     let plotWidth: CGFloat = 500
+
     let plotHeight: CGFloat = 500
-    let axisSize: CGFloat = 100
-    let tickLength: CGFloat = 10
+
+    let ticksViewSize: CGFloat = 50
 
     var body: some View {
 
-        VStack(alignment: .leading, spacing: 0) {
+        HStack {
 
-            Spacer()
-            
-            HStack(spacing: 0) {
+            // Begin Settings area
 
-                YTicks($dataBounds)
-                    .background(UIConstants.offBlack)
-                    .frame(width: axisSize, height: plotHeight)
+            DataBoundsControls($dataBounds)
 
-                Plot($dataBounds)
-                    .background(UIConstants.offBlack)
-                    .frame(width: plotWidth, height: plotHeight)
-                    .border(UIConstants.offWhite)
+            // Begin Plot area
+
+            VStack(alignment: .leading, spacing: 0) {
 
                 Spacer()
-                    .frame(width: axisSize, height: plotHeight)
+
+                HStack(spacing: 0) {
+
+                    YTicks($dataBounds)
+                        // .background(UIConstants.offBlack)
+                        .frame(width: ticksViewSize, height: plotHeight)
+
+                    Plot($dataBounds)
+                        .background(UIConstants.offBlack)
+                        .frame(width: plotWidth, height: plotHeight)
+                        .border(UIConstants.offWhite)
+
+                    Spacer()
+                        .frame(width: ticksViewSize, height: plotHeight)
+                }
+
+                HStack(spacing: 0) {
+
+                    Spacer()
+                        .frame(width: ticksViewSize, height: ticksViewSize)
+
+                    XTicks($dataBounds)
+                        // .background(UIConstants.offBlack)
+                        .frame(width: plotWidth, height: ticksViewSize)
+
+                    Spacer()
+                        .frame(width: ticksViewSize, height: ticksViewSize)
+
+                }
+
+                Spacer()
             }
-
-            HStack(spacing: 0) {
-
-                Spacer()
-                    .frame(width: axisSize, height: axisSize)
-
-                XTicks($dataBounds)
-                    .background(UIConstants.offBlack)
-                    .frame(width: plotWidth, height: axisSize)
-
-                Spacer()
-                    .frame(width: axisSize, height: axisSize)
-
-            }
-
-            Spacer()
+            // end Plot area
         }
-
     }
 }
