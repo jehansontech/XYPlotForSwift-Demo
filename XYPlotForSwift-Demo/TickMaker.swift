@@ -43,6 +43,14 @@ struct DataBounds {
     var fheight: CGFloat {
         return CGFloat(height)
     }
+
+    var exponentX: Int {
+        return max(orderOfMagnitude(minX), orderOfMagnitude(maxX)) - 1
+    }
+
+    var exponentY: Int {
+        return max(orderOfMagnitude(minY), orderOfMagnitude(maxY)) - 1
+    }
 }
 
 struct XTicks: View {
@@ -61,40 +69,41 @@ struct XTicks: View {
         return makeNumbers()
     }
 
-    func makeNumbers() -> [Int] {
-        // TODO
-        return [2,20,40,60,80,102]
-    }
-
-    var magnitude: CGFloat {
-        return CGFloat(max(orderOfMagnitude(dataBounds.minX), orderOfMagnitude(dataBounds.maxX)))
+    var multiplier: CGFloat {
+        return CGFloat(pow(10,Double(dataBounds.exponentX)))
     }
 
     var body: some View {
 
-        GeometryReader { proxy in
+        VStack(spacing: 10) {
 
-            let t1 = CGAffineTransform
-                .identity
-                .scaledBy(x: proxy.frame(in: .local).width / dataBounds.fwidth,
-                          y: 1)
-                .translatedBy(x: -dataBounds.fminX, y: -dataBounds.fminY)
+            GeometryReader { proxy in
 
-            ForEach(numbers, id: \.self) { n in
-                Text(formatter.string(for: n)!)
-                    .font(Font.system(size: fontSize, design: .monospaced))
-                    .fixedSize()
-                    .position(CGPoint(x: magnitude * CGFloat(n), y: (proxy.frame(in: .local).minY  + charHeight)).applying(t1))
-            }
+                let t1 = CGAffineTransform
+                    .identity
+                    .scaledBy(x: proxy.frame(in: .local).width / dataBounds.fwidth,
+                              y: 1)
+                    .translatedBy(x: -dataBounds.fminX, y: -dataBounds.fminY)
 
-            Path { path in
-                for n in numbers {
-                    path.move(to:    CGPoint(x: magnitude * CGFloat(n), y: proxy.frame(in: .local).minY))
-                    path.addLine(to: CGPoint(x: magnitude * CGFloat(n), y: proxy.frame(in: .local).minY + tickLength))
+                ForEach(numbers, id: \.self) { n in
+
+                    Path { path in
+                        path.move(to:    CGPoint(x: multiplier * CGFloat(n), y: proxy.frame(in: .local).minY))
+                        path.addLine(to: CGPoint(x: multiplier * CGFloat(n), y: proxy.frame(in: .local).minY + tickLength))
+                    }
+                    .applying(t1)
+                    .stroke()
+
+                    Text(formatter.string(for: n)!)
+                        .font(Font.system(size: fontSize, design: .monospaced))
+                        .fixedSize()
+                        .position(CGPoint(x: multiplier * CGFloat(n), y: (proxy.frame(in: .local).minY  + charHeight)).applying(t1))
+
                 }
             }
-            .applying(t1)
-            .stroke()
+
+            Text(makeLabel())
+                .font(Font.system(size: fontSize, design: .monospaced))
 
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -103,6 +112,22 @@ struct XTicks: View {
 
     init(_ dataBounds: Binding<DataBounds>) {
         self._dataBounds = dataBounds
+    }
+
+    func makeNumbers() -> [Int] {
+        // TODO
+        return [0,1,2,3,4,5,6,7,8,9,10]
+    }
+
+    func makeLabel() -> String {
+        switch dataBounds.exponentX {
+        case 0:
+            return "(units)"
+        case 1:
+            return "(units x 10)"
+        default:
+            return "(units x 10^\(dataBounds.exponentX))"
+        }
     }
 }
 
@@ -122,37 +147,44 @@ struct YTicks: View {
         return makeNumbers()
     }
 
-    var magnitude: CGFloat {
-        return CGFloat(max(orderOfMagnitude(dataBounds.minY), orderOfMagnitude(dataBounds.maxY)))
+    var multiplier: CGFloat {
+        return CGFloat(pow(10,Double(dataBounds.exponentY)))
     }
 
     var body: some View {
 
-        GeometryReader { proxy in
+        HStack(spacing: 10) {
 
-            let t1 = CGAffineTransform
-                .identity
-                .scaledBy(x: 1, y: -1)
-                .translatedBy(x: 0, y: -proxy.frame(in: .local).height)
-                .scaledBy(x: 1,
-                          y: proxy.frame(in: .local).height / dataBounds.fheight)
-                .translatedBy(x: 0, y: -dataBounds.fminY)
+            Text(makeLabel())
+                .font(Font.system(size: fontSize, design: .monospaced))
+                .rotated(by: .degrees(-90))
 
-            ForEach(numbers, id: \.self) { n in
-                Text(formatter.string(for: n)!)
-                    .font(Font.system(size: fontSize, design: .monospaced))
-                    .fixedSize()
-                    .position(CGPoint(x: proxy.frame(in: .local).maxX - numberOffset(n), y: magnitude * CGFloat(n)).applying(t1))
-            }
+            GeometryReader { proxy in
 
-            Path { path in
-                for n in numbers {
-                    path.move(   to: CGPoint(x: proxy.frame(in: .local).maxX,              y: magnitude * CGFloat(n)))
-                    path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX - tickLength, y: magnitude * CGFloat(n)))
+                let t1 = CGAffineTransform
+                    .identity
+                    .scaledBy(x: 1, y: -1)
+                    .translatedBy(x: 0, y: -proxy.frame(in: .local).height)
+                    .scaledBy(x: 1,
+                              y: proxy.frame(in: .local).height / dataBounds.fheight)
+                    .translatedBy(x: 0, y: -dataBounds.fminY)
+
+                ForEach(numbers, id: \.self) { n in
+
+                    Text(formatter.string(for: n)!)
+                        .font(Font.system(size: fontSize, design: .monospaced))
+                        .fixedSize()
+                        .position(CGPoint(x: proxy.frame(in: .local).maxX - numberOffset(n), y: multiplier * CGFloat(n)).applying(t1))
+
+                    Path { path in
+                        path.move(   to: CGPoint(x: proxy.frame(in: .local).maxX,              y: multiplier * CGFloat(n)))
+                        path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX - tickLength, y: multiplier * CGFloat(n)))
+                    }
+                    .applying(t1)
+                    .stroke()
+
                 }
             }
-            .applying(t1)
-            .stroke()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -162,8 +194,18 @@ struct YTicks: View {
     }
 
     func makeNumbers() -> [Int] {
-        // TODO
-        return [1,2,4,6,8,10,11]
+        return [0,1,2,3,4,5,6,7,8,9,10]
+    }
+
+    func makeLabel() -> String {
+        switch dataBounds.exponentY {
+        case 0:
+            return "(units)"
+        case 1:
+            return "(units x 10)"
+        default:
+            return "(units x 10^\(dataBounds.exponentY))"
+        }
     }
 
     func numberOffset(_ n: Int) -> CGFloat {
@@ -189,32 +231,99 @@ struct YTicks: View {
 
 struct Plot: View {
 
+    let fontSize: CGFloat = 12
+
     @Binding var dataBounds: DataBounds
 
     var body: some View {
-        ZStack {
-            GeometryReader { proxy in
 
-                let t1 = CGAffineTransform
-                    .identity
-                    .scaledBy(x: 1, y: -1)
-                    .translatedBy(x: 0, y: -proxy.frame(in: .local).height)
-                    .scaledBy(x: proxy.frame(in: .local).width / dataBounds.fwidth,
-                              y: proxy.frame(in: .local).height / dataBounds.fheight)
-                    .translatedBy(x: -dataBounds.fminX, y: -dataBounds.fminY)
+        GeometryReader { proxy in
 
-                Path { path in
-                    path.addRect(CGRect(x: 12, y: 2, width: 80, height: 8))
-                    path.addRect(CGRect(x: 12, y: 2, width: 10, height: 1))
-                }
-                .applying(t1)
-                .stroke()
-                .clipped()
+            let t1 = CGAffineTransform
+                .identity
+                .scaledBy(x: 1, y: -1)
+                .translatedBy(x: 0, y: -proxy.frame(in: .local).height)
+                .scaledBy(x: proxy.frame(in: .local).width / dataBounds.fwidth,
+                          y: proxy.frame(in: .local).height / dataBounds.fheight)
+                .translatedBy(x: -dataBounds.fminX, y: -dataBounds.fminY)
 
+            Text("(0, 0)")
+                .font(Font.system(size: fontSize, design: .monospaced))
+                .position(CGPoint(x: 0, y: 0).applying(t1))
+
+            Group {
+                Text("(0.1, 0.1)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: 0.1, y: 0.1).applying(t1))
+
+                Text("(1, 1)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: 1, y: 1).applying(t1))
+
+                Text("(10, 10)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: 10, y: 10).applying(t1))
+
+                Text("(100, 100)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: 100, y: 100).applying(t1))
             }
-            // .coordinateSpace(name: "plot")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+            Group {
+                Text("(-0.1, -0.1)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: -0.1, y: -0.1).applying(t1))
+
+                Text("(-1, -1)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: -1, y: -1).applying(t1))
+
+                Text("(-10, -10)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: -10, y: -10).applying(t1))
+
+                Text("(-100, -100)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: -100, y: -100).applying(t1))
+            }
+
+            Group {
+                Text("(0.1, -0.1)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: 0.1, y: -0.1).applying(t1))
+
+                Text("(1, -1)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: 1, y: -1).applying(t1))
+
+                Text("(10, -10)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: 10, y: -10).applying(t1))
+
+                Text("(100, -100)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: 100, y: -100).applying(t1))
+            }
+
+            Group {
+                Text("(-0.1, 0.1)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: -0.1, y: 0.1).applying(t1))
+
+                Text("(-1, 1)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: -1, y: 1).applying(t1))
+
+                Text("(-10, 10)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: -10, y: 10).applying(t1))
+
+                Text("(-100, 100)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: -100, y: 100).applying(t1))
+            }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     init(_ dataBounds: Binding<DataBounds>) {
@@ -254,7 +363,7 @@ struct TickMaker : View {
 
     var body: some View {
 
-        HStack {
+        HStack(spacing: 10) {
 
             // Begin Settings area
 
@@ -276,6 +385,7 @@ struct TickMaker : View {
                         .background(UIConstants.offBlack)
                         .frame(width: plotWidth, height: plotHeight)
                         .border(UIConstants.offWhite)
+                        .clipped()
 
                     Spacer()
                         .frame(width: ticksViewSize, height: plotHeight)
