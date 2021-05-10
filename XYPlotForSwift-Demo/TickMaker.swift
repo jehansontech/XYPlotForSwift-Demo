@@ -11,9 +11,23 @@ import UIStuffForSwift
 
 struct XTicks: View {
 
+    let fontSize: CGFloat = 15
+
+    let numberOffset: CGFloat = 18
+
     let tickLength: CGFloat = 10
 
     @Binding var dataBounds: CGRect
+
+    var numbers: [Int] {
+        // TODO
+        return [0,1,2,3,4,5,6,7,8,9,10]
+    }
+
+    var magnitude: CGFloat {
+        // TODO
+        return dataBounds.width / 10
+    }
 
     var body: some View {
 
@@ -25,42 +39,17 @@ struct XTicks: View {
                           y: 1)
                 .translatedBy(x: -dataBounds.minX, y: -dataBounds.minY)
 
+            ForEach(numbers, id: \.self) { n in
+                Text("\(n)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: magnitude * CGFloat(n), y: (proxy.frame(in: .local).minY  + numberOffset)).applying(t1))
+            }
 
             Path { path in
-
-                path.move(to:    CGPoint(x: dataBounds.minX + 0.0 * dataBounds.width, y: proxy.frame(in: .local).minY))
-                path.addLine(to: CGPoint(x: dataBounds.minX + 0.0 * dataBounds.width, y: proxy.frame(in: .local).minY + tickLength))
-
-                path.move(to:    CGPoint(x: dataBounds.minX + 0.1 * dataBounds.width, y: proxy.frame(in: .local).minY))
-                path.addLine(to: CGPoint(x: dataBounds.minX + 0.1 * dataBounds.width, y: proxy.frame(in: .local).minY + tickLength))
-
-                path.move(to:    CGPoint(x: dataBounds.minX + 0.2 * dataBounds.width, y: proxy.frame(in: .local).minY))
-                path.addLine(to: CGPoint(x: dataBounds.minX + 0.2 * dataBounds.width, y: proxy.frame(in: .local).minY + tickLength))
-
-                path.move(to:    CGPoint(x: dataBounds.minX + 0.3 * dataBounds.width, y: proxy.frame(in: .local).minY))
-                path.addLine(to: CGPoint(x: dataBounds.minX + 0.3 * dataBounds.width, y: proxy.frame(in: .local).minY + tickLength))
-
-                path.move(to:    CGPoint(x: dataBounds.minX + 0.4 * dataBounds.width, y: proxy.frame(in: .local).minY))
-                path.addLine(to: CGPoint(x: dataBounds.minX + 0.4 * dataBounds.width, y: proxy.frame(in: .local).minY + tickLength))
-
-                path.move(to:    CGPoint(x: dataBounds.minX + 0.5 * dataBounds.width, y: proxy.frame(in: .local).minY))
-                path.addLine(to: CGPoint(x: dataBounds.minX + 0.5 * dataBounds.width, y: proxy.frame(in: .local).minY + tickLength))
-
-                path.move(to:    CGPoint(x: dataBounds.minX + 0.6 * dataBounds.width, y: proxy.frame(in: .local).minY))
-                path.addLine(to: CGPoint(x: dataBounds.minX + 0.6 * dataBounds.width, y: proxy.frame(in: .local).minY + tickLength))
-
-                path.move(to:    CGPoint(x: dataBounds.minX + 0.7 * dataBounds.width, y: proxy.frame(in: .local).minY))
-                path.addLine(to: CGPoint(x: dataBounds.minX + 0.7 * dataBounds.width, y: proxy.frame(in: .local).minY + tickLength))
-
-                path.move(to:    CGPoint(x: dataBounds.minX + 0.8 * dataBounds.width, y: proxy.frame(in: .local).minY))
-                path.addLine(to: CGPoint(x: dataBounds.minX + 0.8 * dataBounds.width, y: proxy.frame(in: .local).minY + tickLength))
-
-                path.move(to:    CGPoint(x: dataBounds.minX + 0.9 * dataBounds.width, y: proxy.frame(in: .local).minY))
-                path.addLine(to: CGPoint(x: dataBounds.minX + 0.9 * dataBounds.width, y: proxy.frame(in: .local).minY + tickLength))
-
-                path.move(to:    CGPoint(x: dataBounds.minX + 1.0 * dataBounds.width, y: proxy.frame(in: .local).minY))
-                path.addLine(to: CGPoint(x: dataBounds.minX + 1.0 * dataBounds.width, y: proxy.frame(in: .local).minY + tickLength))
-
+                for n in numbers {
+                    path.move(to:    CGPoint(x: magnitude * CGFloat(n), y: proxy.frame(in: .local).minY))
+                    path.addLine(to: CGPoint(x: magnitude * CGFloat(n), y: proxy.frame(in: .local).minY + tickLength))
+                }
             }
             .applying(t1)
             .stroke()
@@ -78,10 +67,23 @@ struct XTicks: View {
 
 struct YTicks: View {
 
+    let fontSize: CGFloat = 15
+
+    let numberOffset: CGFloat = 20
+
     let tickLength: CGFloat = 10
 
     @Binding var dataBounds: CGRect
 
+    var numbers: [Int] {
+        // TODO
+        return [1,2,3,4,5,6,7,8,9,10,11]
+    }
+
+    var magnitude: CGFloat {
+        // TODO
+        return dataBounds.height / 10
+    }
 
     var body: some View {
 
@@ -95,40 +97,17 @@ struct YTicks: View {
                           y: proxy.frame(in: .local).height / dataBounds.height)
                 .translatedBy(x: 0, y: -dataBounds.minY)
 
+            ForEach(numbers, id: \.self) { n in
+                Text("\(n)")
+                    .font(Font.system(size: fontSize, design: .monospaced))
+                    .position(CGPoint(x: proxy.frame(in: .local).maxX - numberOffset, y: magnitude * CGFloat(n)).applying(t1))
+            }
+
             Path { path in
-
-                path.move(to: CGPoint(x: proxy.frame(in: .local).maxX,               y: dataBounds.minY + 0.0 * dataBounds.height))
-                path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX-tickLength, y: dataBounds.minY + 0.0 * dataBounds.height))
-
-                path.move(to: CGPoint(x: proxy.frame(in: .local).maxX,               y: dataBounds.minY + 0.1 * dataBounds.height))
-                path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX-tickLength, y: dataBounds.minY + 0.1 * dataBounds.height))
-
-                path.move(to: CGPoint(x: proxy.frame(in: .local).maxX,               y: dataBounds.minY + 0.2 * dataBounds.height))
-                path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX-tickLength, y: dataBounds.minY + 0.2 * dataBounds.height))
-
-                path.move(to: CGPoint(x: proxy.frame(in: .local).maxX,               y: dataBounds.minY + 0.3 * dataBounds.height))
-                path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX-tickLength, y: dataBounds.minY + 0.3 * dataBounds.height))
-
-                path.move(to: CGPoint(x: proxy.frame(in: .local).maxX,               y: dataBounds.minY + 0.4 * dataBounds.height))
-                path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX-tickLength, y: dataBounds.minY + 0.4 * dataBounds.height))
-
-                path.move(to: CGPoint(x: proxy.frame(in: .local).maxX,               y: dataBounds.minY + 0.5 * dataBounds.height))
-                path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX-tickLength, y: dataBounds.minY + 0.5 * dataBounds.height))
-
-                path.move(to: CGPoint(x: proxy.frame(in: .local).maxX,               y: dataBounds.minY + 0.6 * dataBounds.height))
-                path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX-tickLength, y: dataBounds.minY + 0.6 * dataBounds.height))
-
-                path.move(to: CGPoint(x: proxy.frame(in: .local).maxX,               y: dataBounds.minY + 0.7 * dataBounds.height))
-                path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX-tickLength, y: dataBounds.minY + 0.7 * dataBounds.height))
-
-                path.move(to: CGPoint(x: proxy.frame(in: .local).maxX,               y: dataBounds.minY + 0.8 * dataBounds.height))
-                path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX-tickLength, y: dataBounds.minY + 0.8 * dataBounds.height))
-
-                path.move(to: CGPoint(x: proxy.frame(in: .local).maxX,               y: dataBounds.minY + 0.9 * dataBounds.height))
-                path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX-tickLength, y: dataBounds.minY + 0.9 * dataBounds.height))
-
-                path.move(to: CGPoint(x: proxy.frame(in: .local).maxX,               y: dataBounds.minY + 1.0 * dataBounds.height))
-                path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX-tickLength, y: dataBounds.minY + 1.0 * dataBounds.height))
+                for n in numbers {
+                    path.move(   to: CGPoint(x: proxy.frame(in: .local).maxX,              y: magnitude * CGFloat(n)))
+                    path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX - tickLength, y: magnitude * CGFloat(n)))
+                }
             }
             .applying(t1)
             .stroke()
@@ -139,7 +118,6 @@ struct YTicks: View {
     init(_ dataBounds: Binding<CGRect>) {
         self._dataBounds = dataBounds
     }
-
 }
 
 
