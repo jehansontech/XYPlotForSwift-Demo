@@ -13,20 +13,22 @@ struct XTicks: View {
 
     let fontSize: CGFloat = 15
 
-    let numberOffset: CGFloat = 18
+    let charHeight: CGFloat = 20
 
     let tickLength: CGFloat = 10
+
+    let formatter: NumberFormatter = NumberFormatter()
 
     @Binding var dataBounds: CGRect
 
     var numbers: [Int] {
         // TODO
-        return [0,1,2,3,4,5,6,7,8,9,10]
+        return [2,20,40,60,80,102]
     }
 
     var magnitude: CGFloat {
         // TODO
-        return dataBounds.width / 10
+        return 1 // dataBounds.width
     }
 
     var body: some View {
@@ -40,9 +42,10 @@ struct XTicks: View {
                 .translatedBy(x: -dataBounds.minX, y: -dataBounds.minY)
 
             ForEach(numbers, id: \.self) { n in
-                Text("\(n)")
+                Text(formatter.string(for: n)!)
                     .font(Font.system(size: fontSize, design: .monospaced))
-                    .position(CGPoint(x: magnitude * CGFloat(n), y: (proxy.frame(in: .local).minY  + numberOffset)).applying(t1))
+                    .fixedSize()
+                    .position(CGPoint(x: magnitude * CGFloat(n), y: (proxy.frame(in: .local).minY  + charHeight)).applying(t1))
             }
 
             Path { path in
@@ -62,27 +65,28 @@ struct XTicks: View {
     init(_ dataBounds: Binding<CGRect>) {
         self._dataBounds = dataBounds
     }
-
 }
 
 struct YTicks: View {
 
     let fontSize: CGFloat = 15
 
-    let numberOffset: CGFloat = 20
+    let charWidth: CGFloat = 20
 
     let tickLength: CGFloat = 10
+
+    let formatter: NumberFormatter = NumberFormatter()
 
     @Binding var dataBounds: CGRect
 
     var numbers: [Int] {
         // TODO
-        return [1,2,3,4,5,6,7,8,9,10,11]
+        return [1,2,4,6,8,10,11]
     }
 
     var magnitude: CGFloat {
         // TODO
-        return dataBounds.height / 10
+        return 1 // dataBounds.height / 10
     }
 
     var body: some View {
@@ -98,9 +102,10 @@ struct YTicks: View {
                 .translatedBy(x: 0, y: -dataBounds.minY)
 
             ForEach(numbers, id: \.self) { n in
-                Text("\(n)")
+                Text(formatter.string(for: n)!)
                     .font(Font.system(size: fontSize, design: .monospaced))
-                    .position(CGPoint(x: proxy.frame(in: .local).maxX - numberOffset, y: magnitude * CGFloat(n)).applying(t1))
+                    .fixedSize()
+                    .position(CGPoint(x: proxy.frame(in: .local).maxX - numberOffset(n), y: magnitude * CGFloat(n)).applying(t1))
             }
 
             Path { path in
@@ -117,6 +122,26 @@ struct YTicks: View {
 
     init(_ dataBounds: Binding<CGRect>) {
         self._dataBounds = dataBounds
+    }
+
+
+    func numberOffset(_ n: Int) -> CGFloat {
+        return 2 * tickLength
+        // FIXME
+        // return CGFloat(digitCount(n)) * charWidth / 2
+    }
+
+    func digitCount(_ n: Int) -> Int {
+        // TODO
+        if (n > 99) {
+            return 3
+        }
+        else if (n > 9) {
+            return 2
+        }
+        else {
+            return 1
+        }
     }
 }
 
@@ -196,7 +221,6 @@ struct TickMaker : View {
 
                 Spacer()
                     .frame(width: axisSize, height: axisSize)
-
 
             }
 
