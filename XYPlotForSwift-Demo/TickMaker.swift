@@ -6,9 +6,7 @@
 //
 
 import SwiftUI
-import Taconic
-import UIStuffForSwift
-
+import WacomaUI
 
 struct DataBounds {
 
@@ -45,13 +43,22 @@ struct DataBounds {
     }
 
     var exponentX: Int {
-        return max(orderOfMagnitude(minX), orderOfMagnitude(maxX)) - 1
+        let m1 = Double.orderOfMagnitude(minX)
+        let m2 = Double.orderOfMagnitude(maxX)
+        let m3 = Double.orderOfMagnitude(width)
+        let max = max(max(m1, m2), m3)
+        return max - 1
     }
 
     var exponentY: Int {
-        return max(orderOfMagnitude(minY), orderOfMagnitude(maxY)) - 1
+        let m1 = Double.orderOfMagnitude(minY)
+        let m2 = Double.orderOfMagnitude(maxY)
+        let m3 = Double.orderOfMagnitude(height)
+        let max = max(max(m1, m2), m3)
+        return max - 1
     }
 }
+
 
 struct XTicks: View {
 
@@ -69,8 +76,12 @@ struct XTicks: View {
         return makeNumbers()
     }
 
-    var multiplier: CGFloat {
-        return CGFloat(pow(10,Double(dataBounds.exponentX)))
+    var fmultiplier: CGFloat {
+        return CGFloat(multiplier)
+    }
+
+    var multiplier: Double {
+        return pow(10,Double(dataBounds.exponentX))
     }
 
     var body: some View {
@@ -88,8 +99,8 @@ struct XTicks: View {
                 ForEach(numbers, id: \.self) { n in
 
                     Path { path in
-                        path.move(to:    CGPoint(x: multiplier * CGFloat(n), y: proxy.frame(in: .local).minY))
-                        path.addLine(to: CGPoint(x: multiplier * CGFloat(n), y: proxy.frame(in: .local).minY + tickLength))
+                        path.move(to:    CGPoint(x: fmultiplier * CGFloat(n), y: proxy.frame(in: .local).minY))
+                        path.addLine(to: CGPoint(x: fmultiplier * CGFloat(n), y: proxy.frame(in: .local).minY + tickLength))
                     }
                     .applying(t1)
                     .stroke()
@@ -97,8 +108,7 @@ struct XTicks: View {
                     Text(formatter.string(for: n)!)
                         .font(Font.system(size: fontSize, design: .monospaced))
                         .fixedSize()
-                        .position(CGPoint(x: multiplier * CGFloat(n), y: (proxy.frame(in: .local).minY  + charHeight)).applying(t1))
-
+                        .position(CGPoint(x: fmultiplier * CGFloat(n), y: (proxy.frame(in: .local).minY  + charHeight)).applying(t1))
                 }
             }
 
@@ -115,18 +125,38 @@ struct XTicks: View {
     }
 
     func makeNumbers() -> [Int] {
-        // TODO
-        return [0,1,2,3,4,5,6,7,8,9,10]
+        var numbers = [Int]()
+        let min = Int(floor(dataBounds.minX / multiplier))
+        let max = Int(ceil(dataBounds.maxX / multiplier))
+        for n in stride(from: min, through: max, by: getStride(max - min)) {
+            numbers.append(n)
+        }
+        return numbers
+    }
+
+    func getStride(_ delta: Int) -> Int{
+        if delta > 50 {
+            return 10
+        }
+        else if delta > 20 {
+            return 5
+        }
+        else if delta > 10 {
+            return 2
+        }
+        else {
+            return 1
+        }
     }
 
     func makeLabel() -> String {
         switch dataBounds.exponentX {
         case 0:
-            return "(units)"
+            return "X (units)"
         case 1:
-            return "(units x 10)"
+            return "X (units x 10)"
         default:
-            return "(units x 10^\(dataBounds.exponentX))"
+            return "X (units x 10^\(dataBounds.exponentX))"
         }
     }
 }
@@ -147,8 +177,12 @@ struct YTicks: View {
         return makeNumbers()
     }
 
-    var multiplier: CGFloat {
-        return CGFloat(pow(10,Double(dataBounds.exponentY)))
+    var fmultiplier: CGFloat {
+        return CGFloat(multiplier)
+    }
+
+    var multiplier: Double {
+        return pow(10,Double(dataBounds.exponentY))
     }
 
     var body: some View {
@@ -174,11 +208,11 @@ struct YTicks: View {
                     Text(formatter.string(for: n)!)
                         .font(Font.system(size: fontSize, design: .monospaced))
                         .fixedSize()
-                        .position(CGPoint(x: proxy.frame(in: .local).maxX - numberOffset(n), y: multiplier * CGFloat(n)).applying(t1))
+                        .position(CGPoint(x: proxy.frame(in: .local).maxX - numberOffset(n), y: fmultiplier * CGFloat(n)).applying(t1))
 
                     Path { path in
-                        path.move(   to: CGPoint(x: proxy.frame(in: .local).maxX,              y: multiplier * CGFloat(n)))
-                        path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX - tickLength, y: multiplier * CGFloat(n)))
+                        path.move(   to: CGPoint(x: proxy.frame(in: .local).maxX,              y: fmultiplier * CGFloat(n)))
+                        path.addLine(to: CGPoint(x: proxy.frame(in: .local).maxX - tickLength, y: fmultiplier * CGFloat(n)))
                     }
                     .applying(t1)
                     .stroke()
@@ -194,7 +228,28 @@ struct YTicks: View {
     }
 
     func makeNumbers() -> [Int] {
-        return [0,1,2,3,4,5,6,7,8,9,10]
+        var numbers = [Int]()
+        let min = Int(floor(dataBounds.minY / multiplier))
+        let max = Int(ceil(dataBounds.maxY / multiplier))
+        for n in stride(from: min, through: max, by: getStride(max - min)) {
+            numbers.append(n)
+        }
+        return numbers
+    }
+
+    func getStride(_ delta: Int) -> Int{
+        if delta > 50 {
+            return 10
+        }
+        else if delta > 20 {
+            return 5
+        }
+        else if delta > 10 {
+            return 2
+        }
+        else {
+            return 1
+        }
     }
 
     func makeLabel() -> String {
@@ -380,6 +435,7 @@ struct TickMaker : View {
                     YTicks($dataBounds)
                         // .background(UIConstants.offBlack)
                         .frame(width: ticksViewSize, height: plotHeight)
+                        // .clipped()
 
                     Plot($dataBounds)
                         .background(UIConstants.offBlack)

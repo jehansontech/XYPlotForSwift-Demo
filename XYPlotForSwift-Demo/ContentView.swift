@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
-import UIStuffForSwift
+import WacomaUI
 import XYPlotForSwift
 
 struct ContentView: View {
 
     @EnvironmentObject var dataSources: DemoDataSources
 
-    @State var selectedPlot: Int = 2
+    @State var selectedPlot: Int = 1
 
     var body: some View {
         VStack {

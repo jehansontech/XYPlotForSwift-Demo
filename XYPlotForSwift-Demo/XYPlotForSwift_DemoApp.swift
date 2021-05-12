@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Taconic
+import Wacoma
 
 @main
 struct XYPlotForSwift_DemoApp: App {

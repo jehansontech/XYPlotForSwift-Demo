@@ -7,8 +7,8 @@
 
 import Foundation
 import SwiftUI
+import Wacoma
 import XYPlotForSwift
-import Taconic
 
 class DemoDataSources: ObservableObject {
 
@@ -32,8 +32,8 @@ struct SimpleDataSource: XYDataSource {
     var dataSets: [XYDataSet] = [XYDataSet]()
 
     init(_ name: String?) {
-        dataSets.append(RandomWalk(name, Color.red, 0, 1, 0.025, 100))
-        dataSets.append(RandomWalk(name, Color.green, 0, 1, 0.025, 100))
+        dataSets.append(RandomWalk(name, Color.red, 0, 1, 0.05, 101))
+        dataSets.append(RandomWalk(name, Color.green, 0, 1, 0.05, 101))
     }
 }
 
@@ -45,13 +45,12 @@ struct RandomWalk: XYDataSet {
 
     var points: [XYPoint]
 
-    var bounds: XYRect?
+    var bounds: XYRect? = nil
 
     init(_ name: String?, _ color: Color?, _ min: Double, _ max: Double, _ fuzzFactor: Double, _ count: Int) {
         self.name = name
         self.color = color
         self.points = [XYPoint]()
-        self.bounds = XYRect(x: 0, y: min, width: Double(count), height: max-min)
         addPoints(min, max, fuzzFactor, count)
     }
 
