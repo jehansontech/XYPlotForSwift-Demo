@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38196612264C50790017836E /* Wacoma in Frameworks */ = {isa = PBXBuildFile; productRef = 38196611264C50790017836E /* Wacoma */; };
-		38196614264C50790017836E /* WacomaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 38196613264C50790017836E /* WacomaUI */; };
-		38196617264C508D0017836E /* XYPlotForSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 38196616264C508D0017836E /* XYPlotForSwift */; };
 		38461ECF263C955D000E889B /* XYPlotForSwift_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38461ECE263C955D000E889B /* XYPlotForSwift_DemoApp.swift */; };
 		38461ED1263C955D000E889B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38461ED0263C955D000E889B /* ContentView.swift */; };
 		38461ED3263C955E000E889B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38461ED2263C955E000E889B /* Assets.xcassets */; };
@@ -17,6 +14,7 @@
 		38A7A9002647509C00784B42 /* DemoDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7A8FF2647509C00784B42 /* DemoDataSources.swift */; };
 		38D4B051264825D400ADEC58 /* PlotSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4B050264825D400ADEC58 /* PlotSelector.swift */; };
 		38D4B053264827CE00ADEC58 /* TickMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4B052264827CE00ADEC58 /* TickMaker.swift */; };
+		38E0907A273057AB007DEB5D /* XYPlotForSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 38E09079273057AB007DEB5D /* XYPlotForSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38196614264C50790017836E /* WacomaUI in Frameworks */,
-				38196612264C50790017836E /* Wacoma in Frameworks */,
-				38196617264C508D0017836E /* XYPlotForSwift in Frameworks */,
+				38E0907A273057AB007DEB5D /* XYPlotForSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,9 +97,7 @@
 			);
 			name = "XYPlotForSwift-Demo";
 			packageProductDependencies = (
-				38196611264C50790017836E /* Wacoma */,
-				38196613264C50790017836E /* WacomaUI */,
-				38196616264C508D0017836E /* XYPlotForSwift */,
+				38E09079273057AB007DEB5D /* XYPlotForSwift */,
 			);
 			productName = "XYPlotForSwift-Demo";
 			productReference = 38461ECB263C955D000E889B /* XYPlotForSwift-Demo.app */;
@@ -133,8 +127,7 @@
 			);
 			mainGroup = 38461EC2263C955D000E889B;
 			packageReferences = (
-				38196610264C50790017836E /* XCRemoteSwiftPackageReference "Wacoma" */,
-				38196615264C508D0017836E /* XCRemoteSwiftPackageReference "XYPlotForSwift" */,
+				38E09078273057AB007DEB5D /* XCRemoteSwiftPackageReference "XYPlotForSwift" */,
 			);
 			productRefGroup = 38461ECC263C955D000E889B /* Products */;
 			projectDirPath = "";
@@ -357,17 +350,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		38196610264C50790017836E /* XCRemoteSwiftPackageReference "Wacoma" */ = {
+		38E09078273057AB007DEB5D /* XCRemoteSwiftPackageReference "XYPlotForSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jehansontech/Wacoma.git";
-			requirement = {
-				branch = dev;
-				kind = branch;
-			};
-		};
-		38196615264C508D0017836E /* XCRemoteSwiftPackageReference "XYPlotForSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jehansontech/XYPlotForSwift.git";
+			repositoryURL = "https://github.com/jehansontech/XYPlotForSwift";
 			requirement = {
 				branch = dev;
 				kind = branch;
@@ -376,19 +361,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		38196611264C50790017836E /* Wacoma */ = {
+		38E09079273057AB007DEB5D /* XYPlotForSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 38196610264C50790017836E /* XCRemoteSwiftPackageReference "Wacoma" */;
-			productName = Wacoma;
-		};
-		38196613264C50790017836E /* WacomaUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 38196610264C50790017836E /* XCRemoteSwiftPackageReference "Wacoma" */;
-			productName = WacomaUI;
-		};
-		38196616264C508D0017836E /* XYPlotForSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 38196615264C508D0017836E /* XCRemoteSwiftPackageReference "XYPlotForSwift" */;
+			package = 38E09078273057AB007DEB5D /* XCRemoteSwiftPackageReference "XYPlotForSwift" */;
 			productName = XYPlotForSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

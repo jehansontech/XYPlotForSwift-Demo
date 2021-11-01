@@ -15,7 +15,7 @@ class DemoDataSources: ObservableObject {
     @Published var dataSource1: XYDataSource
 
     init() {
-        self.dataSource1 = SimpleDataSource("Bug #1")
+        self.dataSource1 = SimpleDataSource()
     }
 }
 
@@ -31,9 +31,10 @@ struct SimpleDataSource: XYDataSource {
 
     var dataSets: [XYDataSet] = [XYDataSet]()
 
-    init(_ name: String?) {
-        dataSets.append(RandomWalk(name, Color.red, 0, 1, 0.05, 101))
-        dataSets.append(RandomWalk(name, Color.green, 0, 1, 0.05, 101))
+    init() {
+        dataSets.append(RandomWalk("Bug #1", Color.red, 0, 1, 0.05, 101))
+        dataSets.append(RandomWalk("Bug #2", Color.green, 0, 1, 0.05, 101))
+        dataSets.append(RandomWalk("Bug #3", Color.blue, 0, 1, 0.05, 101))
     }
 }
 
