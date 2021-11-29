@@ -10,16 +10,7 @@ import SwiftUI
 import Wacoma
 import XYPlotForSwift
 
-class DataSources: ObservableObject {
-
-    @Published var dataSource1: XYDataSource
-
-    init() {
-        self.dataSource1 = SimpleDataSource()
-    }
-}
-
-struct SimpleDataSource: XYDataSource {
+struct ThreeBugs: XYDataSource {
 
     var xAxisName: String = "Time"
 

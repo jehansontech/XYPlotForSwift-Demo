@@ -10,10 +10,6 @@ import XYPlotForSwift
 
 struct ContentView: View {
 
-    @EnvironmentObject var dataSources: DataSources
-
-    @State var selectedPlot: Int = 1
-
     var body: some View {
 
         VStack {
@@ -22,22 +18,8 @@ struct ContentView: View {
                     .padding()
                 PageView()
                     .padding()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-
-//            PlotSelector($selectedPlot)
-//
-//            if selectedPlot == 1 {
-//                XYPlotView(dataSources.dataSource1)
-//                    .padding(UIConstants.pageInsets)
-//                    .foregroundColor(UIConstants.offWhite)
-//                    .background(UIConstants.offBlack)
-//            }
-//            else if selectedPlot == 2 {
-//                TickMaker()
-//                    .padding(UIConstants.pageInsets)
-//            }
-
         }
     }
 }
@@ -45,40 +27,41 @@ struct ContentView: View {
 
 struct DisplayControls: View {
 
-    @EnvironmentObject var displayState: DisplayState
+    @EnvironmentObject var model: AppModel
 
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
 
+            Spacer()
+
             Button(action: {
-                displayState.dark = !displayState.dark
+                model.toggleColorScheme()
             }) {
-                Text(displayState.dark ? "Dark" : "Light")
+                Image(systemName: "sun.max.fill")
             }
 
-            Picker("", selection: $displayState.currentPage) {
+            Picker("", selection: $model.currentPage) {
                 ForEach(Page.allCases, id: \.self) { p in
                     Text(p.rawValue).tag(p)
                 }
             }
             .pickerStyle(.segmented)
         }
-        .preferredColorScheme(displayState.dark ? .dark : .light) // put it here for convenience
-
+        .preferredColorScheme(model.colorScheme) // put it here for convenience
     }
 }
 
 struct PageView: View {
 
-    @EnvironmentObject var displayState: DisplayState
+    @EnvironmentObject var model: AppModel
 
     var body: some View {
         Group {
-            switch displayState.currentPage {
-            case .plot1:
-                Plot1Page()
-            case .tickMaker:
-                TickMaker()
+            switch model.currentPage {
+            case .threeBugs:
+                ThreeBugsPage()
+//            case .tickMaker:
+//                TickMaker()
             }
         }
     }

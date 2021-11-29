@@ -11,14 +11,12 @@ import Wacoma
 @main
 struct XYPlotForSwift_DemoApp: App {
 
-    @StateObject var displayState = DisplayState()
-    @StateObject var dataSources = DataSources()
+    @StateObject var model = AppModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(displayState)
-                .environmentObject(dataSources)
+                .environmentObject(model)
         }
     }
 

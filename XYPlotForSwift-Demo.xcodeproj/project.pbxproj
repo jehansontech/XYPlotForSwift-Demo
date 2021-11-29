@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3834CDC0275432B500F72E1F /* DisplayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDBF275432B500F72E1F /* DisplayState.swift */; };
-		3834CDC1275432B500F72E1F /* DisplayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDBF275432B500F72E1F /* DisplayState.swift */; };
-		3834CDC32754341900F72E1F /* Plot1Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDC22754341900F72E1F /* Plot1Page.swift */; };
-		3834CDC42754341900F72E1F /* Plot1Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDC22754341900F72E1F /* Plot1Page.swift */; };
+		3834CDC0275432B500F72E1F /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDBF275432B500F72E1F /* AppModel.swift */; };
+		3834CDC1275432B500F72E1F /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDBF275432B500F72E1F /* AppModel.swift */; };
+		3834CDC32754341900F72E1F /* ThreeBugsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDC22754341900F72E1F /* ThreeBugsPage.swift */; };
+		3834CDC42754341900F72E1F /* ThreeBugsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDC22754341900F72E1F /* ThreeBugsPage.swift */; };
 		389993AB2755139A00A3BD98 /* Wacoma in Frameworks */ = {isa = PBXBuildFile; productRef = 389993AA2755139A00A3BD98 /* Wacoma */; };
 		389993AE2755140B00A3BD98 /* Wacoma in Frameworks */ = {isa = PBXBuildFile; productRef = 389993AD2755140B00A3BD98 /* Wacoma */; };
 		389993B5275515A300A3BD98 /* XYPlotForSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 389993B4275515A300A3BD98 /* XYPlotForSwift */; };
@@ -25,15 +25,13 @@
 		38F29D4D274E556C0045B74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F29D3A274E556C0045B74F /* Assets.xcassets */; };
 		38F29D61274E563D0045B74F /* DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D60274E563C0045B74F /* DataSources.swift */; };
 		38F29D62274E563D0045B74F /* DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D60274E563C0045B74F /* DataSources.swift */; };
-		38F29D64274E56730045B74F /* PlotSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D63274E56730045B74F /* PlotSelector.swift */; };
-		38F29D65274E56730045B74F /* PlotSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D63274E56730045B74F /* PlotSelector.swift */; };
 		38F29D6C274E56F40045B74F /* TickMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D6B274E56F40045B74F /* TickMaker.swift */; };
 		38F29D6D274E56F40045B74F /* TickMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D6B274E56F40045B74F /* TickMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3834CDBF275432B500F72E1F /* DisplayState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayState.swift; sourceTree = "<group>"; };
-		3834CDC22754341900F72E1F /* Plot1Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plot1Page.swift; sourceTree = "<group>"; };
+		3834CDBF275432B500F72E1F /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		3834CDC22754341900F72E1F /* ThreeBugsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeBugsPage.swift; sourceTree = "<group>"; };
 		38B1AAC9274E7A5F00D29C5A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		38B1AACB274E7A6900D29C5A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		38B1AAD1274E7B4800D29C5A /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
@@ -45,7 +43,6 @@
 		38F29D45274E556C0045B74F /* XYPlotForSwift-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XYPlotForSwift-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F29D47274E556C0045B74F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		38F29D60274E563C0045B74F /* DataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSources.swift; sourceTree = "<group>"; };
-		38F29D63274E56730045B74F /* PlotSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotSelector.swift; sourceTree = "<group>"; };
 		38F29D6B274E56F40045B74F /* TickMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,13 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				38F29D6B274E56F40045B74F /* TickMaker.swift */,
-				38F29D63274E56730045B74F /* PlotSelector.swift */,
 				38F29D60274E563C0045B74F /* DataSources.swift */,
 				38F29D38274E556A0045B74F /* XYPlotForSwift_DemoApp.swift */,
 				38F29D39274E556A0045B74F /* ContentView.swift */,
 				38F29D3A274E556C0045B74F /* Assets.xcassets */,
-				3834CDBF275432B500F72E1F /* DisplayState.swift */,
-				3834CDC22754341900F72E1F /* Plot1Page.swift */,
+				3834CDBF275432B500F72E1F /* AppModel.swift */,
+				3834CDC22754341900F72E1F /* ThreeBugsPage.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -254,10 +250,9 @@
 			files = (
 				38F29D61274E563D0045B74F /* DataSources.swift in Sources */,
 				38F29D6C274E56F40045B74F /* TickMaker.swift in Sources */,
-				38F29D64274E56730045B74F /* PlotSelector.swift in Sources */,
 				38F29D4A274E556C0045B74F /* ContentView.swift in Sources */,
-				3834CDC0275432B500F72E1F /* DisplayState.swift in Sources */,
-				3834CDC32754341900F72E1F /* Plot1Page.swift in Sources */,
+				3834CDC0275432B500F72E1F /* AppModel.swift in Sources */,
+				3834CDC32754341900F72E1F /* ThreeBugsPage.swift in Sources */,
 				38F29D48274E556C0045B74F /* XYPlotForSwift_DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,10 +263,9 @@
 			files = (
 				38F29D62274E563D0045B74F /* DataSources.swift in Sources */,
 				38F29D6D274E56F40045B74F /* TickMaker.swift in Sources */,
-				38F29D65274E56730045B74F /* PlotSelector.swift in Sources */,
 				38F29D4B274E556C0045B74F /* ContentView.swift in Sources */,
-				3834CDC1275432B500F72E1F /* DisplayState.swift in Sources */,
-				3834CDC42754341900F72E1F /* Plot1Page.swift in Sources */,
+				3834CDC1275432B500F72E1F /* AppModel.swift in Sources */,
+				3834CDC42754341900F72E1F /* ThreeBugsPage.swift in Sources */,
 				38F29D49274E556C0045B74F /* XYPlotForSwift_DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
