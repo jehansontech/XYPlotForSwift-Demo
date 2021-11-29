@@ -11,13 +11,14 @@ import Wacoma
 @main
 struct XYPlotForSwift_DemoApp: App {
 
-    @StateObject var dataSources = DemoDataSources()
+    @StateObject var displayState = DisplayState()
+    @StateObject var dataSources = DataSources()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(displayState)
                 .environmentObject(dataSources)
-                .preferredColorScheme(.dark)
         }
     }
 

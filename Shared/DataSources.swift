@@ -1,5 +1,5 @@
 //
-//  DemoDataSources.swift
+//  DataSources.swift
 //  XYPlotForSwift-Demo
 //
 //  Created by Jim Hanson on 5/8/21.
@@ -10,7 +10,7 @@ import SwiftUI
 import Wacoma
 import XYPlotForSwift
 
-class DemoDataSources: ObservableObject {
+class DataSources: ObservableObject {
 
     @Published var dataSource1: XYDataSource
 

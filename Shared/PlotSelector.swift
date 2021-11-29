@@ -6,26 +6,26 @@
 //
 
 import SwiftUI
-import WacomaUI
 
 struct PlotSelector: View {
 
+    var buttonSpacing: CGFloat = 10
     @Binding var selectedPlot: Int
 
     var body: some View {
-        HStack(alignment: .top, spacing: UIConstants.buttonSpacing) {
+        HStack(alignment: .top, spacing: buttonSpacing) {
 
             Button(action: { selectedPlot = 1 }) {
                 Text("1")
             }
-            .foregroundColor(UIConstants.controlColor)
-            .modifier(SymbolButtonStyle())
+            // .foregroundColor(UIConstants.controlColor)
+            // .modifier(SymbolButtonStyle())
 
             Button(action: { selectedPlot = 2 }) {
                 Text("2")
             }
-            .foregroundColor(UIConstants.controlColor)
-            .modifier(SymbolButtonStyle())
+            // .foregroundColor(UIConstants.controlColor)
+            // .modifier(SymbolButtonStyle())
         }
     }
 

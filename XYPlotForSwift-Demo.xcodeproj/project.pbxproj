@@ -7,34 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3834CDC0275432B500F72E1F /* DisplayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDBF275432B500F72E1F /* DisplayState.swift */; };
+		3834CDC1275432B500F72E1F /* DisplayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDBF275432B500F72E1F /* DisplayState.swift */; };
+		3834CDC32754341900F72E1F /* Plot1Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDC22754341900F72E1F /* Plot1Page.swift */; };
+		3834CDC42754341900F72E1F /* Plot1Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDC22754341900F72E1F /* Plot1Page.swift */; };
+		389993AB2755139A00A3BD98 /* Wacoma in Frameworks */ = {isa = PBXBuildFile; productRef = 389993AA2755139A00A3BD98 /* Wacoma */; };
+		389993AE2755140B00A3BD98 /* Wacoma in Frameworks */ = {isa = PBXBuildFile; productRef = 389993AD2755140B00A3BD98 /* Wacoma */; };
+		389993B5275515A300A3BD98 /* XYPlotForSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 389993B4275515A300A3BD98 /* XYPlotForSwift */; };
+		389993B7275515B000A3BD98 /* XYPlotForSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 389993B6275515B000A3BD98 /* XYPlotForSwift */; };
+		38B1AACA274E7A5F00D29C5A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 38B1AAC9274E7A5F00D29C5A /* LICENSE */; };
+		38B1AACC274E7A6900D29C5A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 38B1AACB274E7A6900D29C5A /* README.md */; };
 		38F29D48274E556C0045B74F /* XYPlotForSwift_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D38274E556A0045B74F /* XYPlotForSwift_DemoApp.swift */; };
 		38F29D49274E556C0045B74F /* XYPlotForSwift_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D38274E556A0045B74F /* XYPlotForSwift_DemoApp.swift */; };
 		38F29D4A274E556C0045B74F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D39274E556A0045B74F /* ContentView.swift */; };
 		38F29D4B274E556C0045B74F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D39274E556A0045B74F /* ContentView.swift */; };
 		38F29D4C274E556C0045B74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F29D3A274E556C0045B74F /* Assets.xcassets */; };
 		38F29D4D274E556C0045B74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F29D3A274E556C0045B74F /* Assets.xcassets */; };
-		38F29D58274E55AF0045B74F /* Wacoma in Frameworks */ = {isa = PBXBuildFile; productRef = 38F29D57274E55AF0045B74F /* Wacoma */; };
-		38F29D5A274E55AF0045B74F /* WacomaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 38F29D59274E55AF0045B74F /* WacomaUI */; };
-		38F29D5D274E55BF0045B74F /* Wacoma in Frameworks */ = {isa = PBXBuildFile; productRef = 38F29D5C274E55BF0045B74F /* Wacoma */; };
-		38F29D5F274E55BF0045B74F /* WacomaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 38F29D5E274E55BF0045B74F /* WacomaUI */; };
-		38F29D61274E563D0045B74F /* DemoDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D60274E563C0045B74F /* DemoDataSources.swift */; };
-		38F29D62274E563D0045B74F /* DemoDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D60274E563C0045B74F /* DemoDataSources.swift */; };
+		38F29D61274E563D0045B74F /* DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D60274E563C0045B74F /* DataSources.swift */; };
+		38F29D62274E563D0045B74F /* DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D60274E563C0045B74F /* DataSources.swift */; };
 		38F29D64274E56730045B74F /* PlotSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D63274E56730045B74F /* PlotSelector.swift */; };
 		38F29D65274E56730045B74F /* PlotSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D63274E56730045B74F /* PlotSelector.swift */; };
-		38F29D68274E56B80045B74F /* XYPlotForSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 38F29D67274E56B80045B74F /* XYPlotForSwift */; };
-		38F29D6A274E56C50045B74F /* XYPlotForSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 38F29D69274E56C50045B74F /* XYPlotForSwift */; };
 		38F29D6C274E56F40045B74F /* TickMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D6B274E56F40045B74F /* TickMaker.swift */; };
 		38F29D6D274E56F40045B74F /* TickMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D6B274E56F40045B74F /* TickMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3834CDBF275432B500F72E1F /* DisplayState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayState.swift; sourceTree = "<group>"; };
+		3834CDC22754341900F72E1F /* Plot1Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plot1Page.swift; sourceTree = "<group>"; };
+		38B1AAC9274E7A5F00D29C5A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		38B1AACB274E7A6900D29C5A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		38B1AAD1274E7B4800D29C5A /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
+		38B1AAD2274E7B6300D29C5A /* Done.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Done.txt; sourceTree = "<group>"; };
 		38F29D38274E556A0045B74F /* XYPlotForSwift_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYPlotForSwift_DemoApp.swift; sourceTree = "<group>"; };
 		38F29D39274E556A0045B74F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38F29D3A274E556C0045B74F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F29D3F274E556C0045B74F /* XYPlotForSwift-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XYPlotForSwift-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F29D45274E556C0045B74F /* XYPlotForSwift-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XYPlotForSwift-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F29D47274E556C0045B74F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		38F29D60274E563C0045B74F /* DemoDataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoDataSources.swift; sourceTree = "<group>"; };
+		38F29D60274E563C0045B74F /* DataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSources.swift; sourceTree = "<group>"; };
 		38F29D63274E56730045B74F /* PlotSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotSelector.swift; sourceTree = "<group>"; };
 		38F29D6B274E56F40045B74F /* TickMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,9 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F29D5A274E55AF0045B74F /* WacomaUI in Frameworks */,
-				38F29D58274E55AF0045B74F /* Wacoma in Frameworks */,
-				38F29D68274E56B80045B74F /* XYPlotForSwift in Frameworks */,
+				389993B5275515A300A3BD98 /* XYPlotForSwift in Frameworks */,
+				389993AB2755139A00A3BD98 /* Wacoma in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,22 +63,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F29D5F274E55BF0045B74F /* WacomaUI in Frameworks */,
-				38F29D5D274E55BF0045B74F /* Wacoma in Frameworks */,
-				38F29D6A274E56C50045B74F /* XYPlotForSwift in Frameworks */,
+				389993B7275515B000A3BD98 /* XYPlotForSwift in Frameworks */,
+				389993AE2755140B00A3BD98 /* Wacoma in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38B1AAD0274E7B2600D29C5A /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				38B1AAD1274E7B4800D29C5A /* ToDo.txt */,
+				38B1AAD2274E7B6300D29C5A /* Done.txt */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		38F29D32274E556A0045B74F = {
 			isa = PBXGroup;
 			children = (
+				38B1AAD0274E7B2600D29C5A /* Notes */,
 				38F29D37274E556A0045B74F /* Shared */,
 				38F29D46274E556C0045B74F /* macOS */,
-				38F29D40274E556C0045B74F /* Products */,
+				38B1AAC9274E7A5F00D29C5A /* LICENSE */,
+				38B1AACB274E7A6900D29C5A /* README.md */,
 				38F29D5B274E55BF0045B74F /* Frameworks */,
+				38F29D6E274E59EF0045B74F /* Packages */,
+				38F29D40274E556C0045B74F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,10 +99,12 @@
 			children = (
 				38F29D6B274E56F40045B74F /* TickMaker.swift */,
 				38F29D63274E56730045B74F /* PlotSelector.swift */,
-				38F29D60274E563C0045B74F /* DemoDataSources.swift */,
+				38F29D60274E563C0045B74F /* DataSources.swift */,
 				38F29D38274E556A0045B74F /* XYPlotForSwift_DemoApp.swift */,
 				38F29D39274E556A0045B74F /* ContentView.swift */,
 				38F29D3A274E556C0045B74F /* Assets.xcassets */,
+				3834CDBF275432B500F72E1F /* DisplayState.swift */,
+				3834CDC22754341900F72E1F /* Plot1Page.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -110,6 +133,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		38F29D6E274E59EF0045B74F /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,9 +157,8 @@
 			);
 			name = "XYPlotForSwift-Demo (iOS)";
 			packageProductDependencies = (
-				38F29D57274E55AF0045B74F /* Wacoma */,
-				38F29D59274E55AF0045B74F /* WacomaUI */,
-				38F29D67274E56B80045B74F /* XYPlotForSwift */,
+				389993AA2755139A00A3BD98 /* Wacoma */,
+				389993B4275515A300A3BD98 /* XYPlotForSwift */,
 			);
 			productName = "XYPlotForSwift-Demo (iOS)";
 			productReference = 38F29D3F274E556C0045B74F /* XYPlotForSwift-Demo.app */;
@@ -149,9 +178,8 @@
 			);
 			name = "XYPlotForSwift-Demo (macOS)";
 			packageProductDependencies = (
-				38F29D5C274E55BF0045B74F /* Wacoma */,
-				38F29D5E274E55BF0045B74F /* WacomaUI */,
-				38F29D69274E56C50045B74F /* XYPlotForSwift */,
+				389993AD2755140B00A3BD98 /* Wacoma */,
+				389993B6275515B000A3BD98 /* XYPlotForSwift */,
 			);
 			productName = "XYPlotForSwift-Demo (macOS)";
 			productReference = 38F29D45274E556C0045B74F /* XYPlotForSwift-Demo.app */;
@@ -185,8 +213,8 @@
 			);
 			mainGroup = 38F29D32274E556A0045B74F;
 			packageReferences = (
-				38F29D56274E55AF0045B74F /* XCRemoteSwiftPackageReference "Wacoma" */,
-				38F29D66274E56B80045B74F /* XCRemoteSwiftPackageReference "XYPlotForSwift" */,
+				389993A92755139A00A3BD98 /* XCRemoteSwiftPackageReference "Wacoma" */,
+				389993B3275515A300A3BD98 /* XCRemoteSwiftPackageReference "XYPlotForSwift" */,
 			);
 			productRefGroup = 38F29D40274E556C0045B74F /* Products */;
 			projectDirPath = "";
@@ -203,6 +231,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B1AACC274E7A6900D29C5A /* README.md in Resources */,
+				38B1AACA274E7A5F00D29C5A /* LICENSE in Resources */,
 				38F29D4C274E556C0045B74F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,10 +252,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F29D61274E563D0045B74F /* DemoDataSources.swift in Sources */,
+				38F29D61274E563D0045B74F /* DataSources.swift in Sources */,
 				38F29D6C274E56F40045B74F /* TickMaker.swift in Sources */,
 				38F29D64274E56730045B74F /* PlotSelector.swift in Sources */,
 				38F29D4A274E556C0045B74F /* ContentView.swift in Sources */,
+				3834CDC0275432B500F72E1F /* DisplayState.swift in Sources */,
+				3834CDC32754341900F72E1F /* Plot1Page.swift in Sources */,
 				38F29D48274E556C0045B74F /* XYPlotForSwift_DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,10 +266,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F29D62274E563D0045B74F /* DemoDataSources.swift in Sources */,
+				38F29D62274E563D0045B74F /* DataSources.swift in Sources */,
 				38F29D6D274E56F40045B74F /* TickMaker.swift in Sources */,
 				38F29D65274E56730045B74F /* PlotSelector.swift in Sources */,
 				38F29D4B274E556C0045B74F /* ContentView.swift in Sources */,
+				3834CDC1275432B500F72E1F /* DisplayState.swift in Sources */,
+				3834CDC42754341900F72E1F /* Plot1Page.swift in Sources */,
 				38F29D49274E556C0045B74F /* XYPlotForSwift_DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,7 +540,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		38F29D56274E55AF0045B74F /* XCRemoteSwiftPackageReference "Wacoma" */ = {
+		389993A92755139A00A3BD98 /* XCRemoteSwiftPackageReference "Wacoma" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jehansontech/Wacoma";
 			requirement = {
@@ -514,7 +548,7 @@
 				kind = branch;
 			};
 		};
-		38F29D66274E56B80045B74F /* XCRemoteSwiftPackageReference "XYPlotForSwift" */ = {
+		389993B3275515A300A3BD98 /* XCRemoteSwiftPackageReference "XYPlotForSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jehansontech/XYPlotForSwift";
 			requirement = {
@@ -525,34 +559,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		38F29D57274E55AF0045B74F /* Wacoma */ = {
+		389993AA2755139A00A3BD98 /* Wacoma */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 38F29D56274E55AF0045B74F /* XCRemoteSwiftPackageReference "Wacoma" */;
+			package = 389993A92755139A00A3BD98 /* XCRemoteSwiftPackageReference "Wacoma" */;
 			productName = Wacoma;
 		};
-		38F29D59274E55AF0045B74F /* WacomaUI */ = {
+		389993AD2755140B00A3BD98 /* Wacoma */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 38F29D56274E55AF0045B74F /* XCRemoteSwiftPackageReference "Wacoma" */;
-			productName = WacomaUI;
-		};
-		38F29D5C274E55BF0045B74F /* Wacoma */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 38F29D56274E55AF0045B74F /* XCRemoteSwiftPackageReference "Wacoma" */;
+			package = 389993A92755139A00A3BD98 /* XCRemoteSwiftPackageReference "Wacoma" */;
 			productName = Wacoma;
 		};
-		38F29D5E274E55BF0045B74F /* WacomaUI */ = {
+		389993B4275515A300A3BD98 /* XYPlotForSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 38F29D56274E55AF0045B74F /* XCRemoteSwiftPackageReference "Wacoma" */;
-			productName = WacomaUI;
-		};
-		38F29D67274E56B80045B74F /* XYPlotForSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 38F29D66274E56B80045B74F /* XCRemoteSwiftPackageReference "XYPlotForSwift" */;
+			package = 389993B3275515A300A3BD98 /* XCRemoteSwiftPackageReference "XYPlotForSwift" */;
 			productName = XYPlotForSwift;
 		};
-		38F29D69274E56C50045B74F /* XYPlotForSwift */ = {
+		389993B6275515B000A3BD98 /* XYPlotForSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 38F29D66274E56B80045B74F /* XCRemoteSwiftPackageReference "XYPlotForSwift" */;
+			package = 389993B3275515A300A3BD98 /* XCRemoteSwiftPackageReference "XYPlotForSwift" */;
 			productName = XYPlotForSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

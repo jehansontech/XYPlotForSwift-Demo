@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import WacomaUI
 
 struct DataBounds {
 
@@ -284,7 +283,7 @@ struct YTicks: View {
 }
 
 
-struct Plot: View {
+struct TickMakerPlot: View {
 
     let fontSize: CGFloat = 12
 
@@ -390,14 +389,14 @@ struct DataBoundsControls : View {
 
     @Binding var dataBounds: DataBounds
 
-    @State var group = SettingsGroup().itemStyle(.narrow)
+    // @State var group = SettingsGroup().itemStyle(.narrow)
 
     var body: some View {
         VStack {
-            RangeSetting("xMin", $dataBounds.minX, $group, -100, 100, 0.1)
-            RangeSetting("width", $dataBounds.width, $group, 0.1, 200, 0.1)
-            RangeSetting("yMin", $dataBounds.minY, $group, -10, 10, 0.1)
-            RangeSetting("height", $dataBounds.height, $group, 0.1, 200, 0.1)
+//            RangeSetting("xMin", $dataBounds.minX, $group, -100, 100, 0.1)
+//            RangeSetting("width", $dataBounds.width, $group, 0.1, 200, 0.1)
+//            RangeSetting("yMin", $dataBounds.minY, $group, -10, 10, 0.1)
+//            RangeSetting("height", $dataBounds.height, $group, 0.1, 200, 0.1)
         }
     }
 
@@ -437,10 +436,10 @@ struct TickMaker : View {
                         .frame(width: ticksViewSize, height: plotHeight)
                         // .clipped()
 
-                    Plot($dataBounds)
-                        .background(UIConstants.offBlack)
+                    TickMakerPlot($dataBounds)
+                        // .background(UIConstants.offBlack)
                         .frame(width: plotWidth, height: plotHeight)
-                        .border(UIConstants.offWhite)
+                        // .border(UIConstants.offWhite)
                         .clipped()
 
                     Spacer()
