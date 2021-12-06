@@ -34,8 +34,6 @@
 		3834CDC22754341900F72E1F /* ThreeBugsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeBugsPage.swift; sourceTree = "<group>"; };
 		38B1AAC9274E7A5F00D29C5A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		38B1AACB274E7A6900D29C5A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		38B1AAD1274E7B4800D29C5A /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
-		38B1AAD2274E7B6300D29C5A /* Done.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Done.txt; sourceTree = "<group>"; };
 		38F29D38274E556A0045B74F /* XYPlotForSwift_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYPlotForSwift_DemoApp.swift; sourceTree = "<group>"; };
 		38F29D39274E556A0045B74F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38F29D3A274E556C0045B74F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,19 +66,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		38B1AAD0274E7B2600D29C5A /* Notes */ = {
-			isa = PBXGroup;
-			children = (
-				38B1AAD1274E7B4800D29C5A /* ToDo.txt */,
-				38B1AAD2274E7B6300D29C5A /* Done.txt */,
-			);
-			path = Notes;
-			sourceTree = "<group>";
-		};
 		38F29D32274E556A0045B74F = {
 			isa = PBXGroup;
 			children = (
-				38B1AAD0274E7B2600D29C5A /* Notes */,
 				38F29D37274E556A0045B74F /* Shared */,
 				38F29D46274E556C0045B74F /* macOS */,
 				38B1AAC9274E7A5F00D29C5A /* LICENSE */,
