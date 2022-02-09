@@ -12,6 +12,8 @@ import XYPlotForSwift
 
 struct ThreeBugs: XYDataSource {
 
+    var name: String = "ThreeBugs"
+
     var xAxisName: String = "Time"
 
     var xAxisUnits: String? = "sec"
