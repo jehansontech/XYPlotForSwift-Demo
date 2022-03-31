@@ -9,39 +9,47 @@
 /* Begin PBXBuildFile section */
 		3834CDC0275432B500F72E1F /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDBF275432B500F72E1F /* AppModel.swift */; };
 		3834CDC1275432B500F72E1F /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDBF275432B500F72E1F /* AppModel.swift */; };
-		3834CDC32754341900F72E1F /* ThreeBugsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDC22754341900F72E1F /* ThreeBugsPage.swift */; };
-		3834CDC42754341900F72E1F /* ThreeBugsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3834CDC22754341900F72E1F /* ThreeBugsPage.swift */; };
+		3853D74927DB86C0000332B5 /* SevenCoinsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3853D74827DB86C0000332B5 /* SevenCoinsDemo.swift */; };
+		387CF8D427DD043200EE1FD4 /* SevenCoinsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387CF8D327DD043200EE1FD4 /* SevenCoinsPage.swift */; };
+		387CF8D527DD043200EE1FD4 /* SevenCoinsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387CF8D327DD043200EE1FD4 /* SevenCoinsPage.swift */; };
+		3883365727F08AB50025494E /* SevenCoinsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3853D74827DB86C0000332B5 /* SevenCoinsDemo.swift */; };
 		389993AB2755139A00A3BD98 /* Wacoma in Frameworks */ = {isa = PBXBuildFile; productRef = 389993AA2755139A00A3BD98 /* Wacoma */; };
 		389993AE2755140B00A3BD98 /* Wacoma in Frameworks */ = {isa = PBXBuildFile; productRef = 389993AD2755140B00A3BD98 /* Wacoma */; };
 		389993B5275515A300A3BD98 /* XYPlotForSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 389993B4275515A300A3BD98 /* XYPlotForSwift */; };
 		389993B7275515B000A3BD98 /* XYPlotForSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 389993B6275515B000A3BD98 /* XYPlotForSwift */; };
 		38B1AACA274E7A5F00D29C5A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 38B1AAC9274E7A5F00D29C5A /* LICENSE */; };
 		38B1AACC274E7A6900D29C5A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 38B1AACB274E7A6900D29C5A /* README.md */; };
+		38E40D0D27F5E29E00EDE038 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E40D0C27F5E29E00EDE038 /* View+Extensions.swift */; };
+		38E40D0E27F5E29E00EDE038 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E40D0C27F5E29E00EDE038 /* View+Extensions.swift */; };
+		38EB187A27F5F85100709F95 /* CaptionEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB187927F5F85100709F95 /* CaptionEditorView.swift */; };
+		38EB187B27F5F85100709F95 /* CaptionEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB187927F5F85100709F95 /* CaptionEditorView.swift */; };
+		38EB187D27F5F8BE00709F95 /* LayerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB187C27F5F8BE00709F95 /* LayerPicker.swift */; };
+		38EB187E27F5F8BE00709F95 /* LayerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB187C27F5F8BE00709F95 /* LayerPicker.swift */; };
 		38F29D48274E556C0045B74F /* XYPlotForSwift_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D38274E556A0045B74F /* XYPlotForSwift_DemoApp.swift */; };
 		38F29D49274E556C0045B74F /* XYPlotForSwift_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D38274E556A0045B74F /* XYPlotForSwift_DemoApp.swift */; };
 		38F29D4A274E556C0045B74F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D39274E556A0045B74F /* ContentView.swift */; };
 		38F29D4B274E556C0045B74F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D39274E556A0045B74F /* ContentView.swift */; };
 		38F29D4C274E556C0045B74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F29D3A274E556C0045B74F /* Assets.xcassets */; };
 		38F29D4D274E556C0045B74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F29D3A274E556C0045B74F /* Assets.xcassets */; };
-		38F29D61274E563D0045B74F /* DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D60274E563C0045B74F /* DataSources.swift */; };
-		38F29D62274E563D0045B74F /* DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D60274E563C0045B74F /* DataSources.swift */; };
-		38F29D6C274E56F40045B74F /* TickMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D6B274E56F40045B74F /* TickMaker.swift */; };
-		38F29D6D274E56F40045B74F /* TickMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F29D6B274E56F40045B74F /* TickMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3834CDBF275432B500F72E1F /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
-		3834CDC22754341900F72E1F /* ThreeBugsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeBugsPage.swift; sourceTree = "<group>"; };
+		3853D74827DB86C0000332B5 /* SevenCoinsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenCoinsDemo.swift; sourceTree = "<group>"; };
+		385D456C27F60D3200FF993C /* XYPlotForSwift-Demo (iOS).entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "XYPlotForSwift-Demo (iOS).entitlements"; sourceTree = "<group>"; };
+		387CF8D327DD043200EE1FD4 /* SevenCoinsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenCoinsPage.swift; sourceTree = "<group>"; };
 		38B1AAC9274E7A5F00D29C5A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		38B1AACB274E7A6900D29C5A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		38E40D0C27F5E29E00EDE038 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		38EB187827F5F55400709F95 /* XYPlotForSwift-Demo--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "XYPlotForSwift-Demo--iOS--Info.plist"; sourceTree = "<group>"; };
+		38EB187927F5F85100709F95 /* CaptionEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionEditorView.swift; sourceTree = "<group>"; };
+		38EB187C27F5F8BE00709F95 /* LayerPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerPicker.swift; sourceTree = "<group>"; };
 		38F29D38274E556A0045B74F /* XYPlotForSwift_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYPlotForSwift_DemoApp.swift; sourceTree = "<group>"; };
 		38F29D39274E556A0045B74F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38F29D3A274E556C0045B74F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F29D3F274E556C0045B74F /* XYPlotForSwift-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XYPlotForSwift-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F29D45274E556C0045B74F /* XYPlotForSwift-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XYPlotForSwift-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F29D47274E556C0045B74F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		38F29D60274E563C0045B74F /* DataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSources.swift; sourceTree = "<group>"; };
-		38F29D6B274E56F40045B74F /* TickMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,8 @@
 		38F29D32274E556A0045B74F = {
 			isa = PBXGroup;
 			children = (
+				385D456C27F60D3200FF993C /* XYPlotForSwift-Demo (iOS).entitlements */,
+				38EB187827F5F55400709F95 /* XYPlotForSwift-Demo--iOS--Info.plist */,
 				38F29D37274E556A0045B74F /* Shared */,
 				38F29D46274E556C0045B74F /* macOS */,
 				38B1AAC9274E7A5F00D29C5A /* LICENSE */,
@@ -82,13 +92,15 @@
 		38F29D37274E556A0045B74F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				38F29D6B274E56F40045B74F /* TickMaker.swift */,
-				38F29D60274E563C0045B74F /* DataSources.swift */,
-				38F29D38274E556A0045B74F /* XYPlotForSwift_DemoApp.swift */,
-				38F29D39274E556A0045B74F /* ContentView.swift */,
-				38F29D3A274E556C0045B74F /* Assets.xcassets */,
 				3834CDBF275432B500F72E1F /* AppModel.swift */,
-				3834CDC22754341900F72E1F /* ThreeBugsPage.swift */,
+				38EB187927F5F85100709F95 /* CaptionEditorView.swift */,
+				38F29D39274E556A0045B74F /* ContentView.swift */,
+				38EB187C27F5F8BE00709F95 /* LayerPicker.swift */,
+				3853D74827DB86C0000332B5 /* SevenCoinsDemo.swift */,
+				387CF8D327DD043200EE1FD4 /* SevenCoinsPage.swift */,
+				38E40D0C27F5E29E00EDE038 /* View+Extensions.swift */,
+				38F29D38274E556A0045B74F /* XYPlotForSwift_DemoApp.swift */,
+				38F29D3A274E556C0045B74F /* Assets.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -236,12 +248,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F29D61274E563D0045B74F /* DataSources.swift in Sources */,
-				38F29D6C274E56F40045B74F /* TickMaker.swift in Sources */,
 				38F29D4A274E556C0045B74F /* ContentView.swift in Sources */,
+				3853D74927DB86C0000332B5 /* SevenCoinsDemo.swift in Sources */,
 				3834CDC0275432B500F72E1F /* AppModel.swift in Sources */,
-				3834CDC32754341900F72E1F /* ThreeBugsPage.swift in Sources */,
+				387CF8D427DD043200EE1FD4 /* SevenCoinsPage.swift in Sources */,
+				38E40D0D27F5E29E00EDE038 /* View+Extensions.swift in Sources */,
+				38EB187A27F5F85100709F95 /* CaptionEditorView.swift in Sources */,
 				38F29D48274E556C0045B74F /* XYPlotForSwift_DemoApp.swift in Sources */,
+				38EB187D27F5F8BE00709F95 /* LayerPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,12 +263,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F29D62274E563D0045B74F /* DataSources.swift in Sources */,
-				38F29D6D274E56F40045B74F /* TickMaker.swift in Sources */,
 				38F29D4B274E556C0045B74F /* ContentView.swift in Sources */,
+				387CF8D527DD043200EE1FD4 /* SevenCoinsPage.swift in Sources */,
 				3834CDC1275432B500F72E1F /* AppModel.swift in Sources */,
-				3834CDC42754341900F72E1F /* ThreeBugsPage.swift in Sources */,
+				3883365727F08AB50025494E /* SevenCoinsDemo.swift in Sources */,
+				38E40D0E27F5E29E00EDE038 /* View+Extensions.swift in Sources */,
+				38EB187B27F5F85100709F95 /* CaptionEditorView.swift in Sources */,
 				38F29D49274E556C0045B74F /* XYPlotForSwift_DemoApp.swift in Sources */,
+				38EB187E27F5F8BE00709F95 /* LayerPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,17 +393,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "XYPlotForSwift-Demo (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VV92S3CB9G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "XYPlotForSwift-Demo--iOS--Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "for screenshots";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,6 +414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jehanson.XYPlotForSwift-Demo";
 				PRODUCT_NAME = "XYPlotForSwift-Demo";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -407,17 +426,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "XYPlotForSwift-Demo (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VV92S3CB9G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "XYPlotForSwift-Demo--iOS--Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "for screenshots";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -426,6 +447,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jehanson.XYPlotForSwift-Demo";
 				PRODUCT_NAME = "XYPlotForSwift-Demo";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,7 +474,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jehanson.XYPlotForSwift-Demo";
 				PRODUCT_NAME = "XYPlotForSwift-Demo";
@@ -481,7 +503,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jehanson.XYPlotForSwift-Demo";
 				PRODUCT_NAME = "XYPlotForSwift-Demo";

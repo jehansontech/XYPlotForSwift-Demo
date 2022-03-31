@@ -9,18 +9,17 @@ import SwiftUI
 import XYPlotForSwift
 
 enum Page: String, CaseIterable {
-    case threeBugs = "Three Bugs"
-    // case tickMaker  = "TickMaker"
+    case sevenCoins = "Seven Coins"
 }
 
 class AppModel: ObservableObject {
 
     @Published var colorScheme = ColorScheme.dark
 
-    @Published var currentPage: Page = .threeBugs
+    @Published var currentPage: Page = .sevenCoins
 
-    @Published var threeBugsDataSource = ThreeBugs()
-    
+    @Published var sevenCoinsDemo = SevenCoinsDemo()
+
     func toggleColorScheme() {
         switch colorScheme {
         case .dark:
@@ -28,7 +27,7 @@ class AppModel: ObservableObject {
         case .light:
             colorScheme = .dark
         @unknown default:
-            fatalError("Unknown color scheme")
+            fatalError("Unsupported color scheme: \(colorScheme)")
         }
     }
 

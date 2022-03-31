@@ -15,7 +15,7 @@ struct ContentView: View {
         VStack {
             VStack(alignment: .leading, spacing: 0) {
                 DisplayControls()
-                    .padding()
+                Divider()
                 PageView()
                     .padding()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -31,21 +31,21 @@ struct DisplayControls: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
-
-            Spacer()
-
             Button(action: {
                 model.toggleColorScheme()
             }) {
                 Image(systemName: "sun.max.fill")
             }
 
-            Picker("", selection: $model.currentPage) {
-                ForEach(Page.allCases, id: \.self) { p in
-                    Text(p.rawValue).tag(p)
-                }
-            }
-            .pickerStyle(.segmented)
+//            Picker("", selection: $model.currentPage) {
+//                ForEach(Page.allCases, id: \.self) { p in
+//                    Text(p.rawValue).tag(p)
+//                }
+//            }
+//            .pickerStyle(.menu)
+
+            Spacer()
+                .frame(maxWidth: .infinity)
         }
         .preferredColorScheme(model.colorScheme) // put it here for convenience
     }
@@ -58,18 +58,16 @@ struct PageView: View {
     var body: some View {
         Group {
             switch model.currentPage {
-            case .threeBugs:
-                ThreeBugsPage()
-//            case .tickMaker:
-//                TickMaker()
+            case .sevenCoins:
+                SevenCoinsPage()
             }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
 
