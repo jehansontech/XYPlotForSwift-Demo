@@ -52,8 +52,8 @@ class SevenCoinsDemo: ObservableObject {
         self.tailsCount = Array<Int>(repeating: 0, count: Self.coins.count)
 
         self.plotModel = XYPlotModel(title: Page.sevenCoins.rawValue)
-        self.plotModel.layers.append(XYLayer(xLabel: AxisLabel("#Flips", nil), yLabel: AxisLabel("Heads Fraction", nil)))
-        self.plotModel.layers.append(XYLayer(xLabel: AxisLabel("#Flips", nil), yLabel: AxisLabel("Excess Heads", nil)))
+        self.plotModel.addLayer(xLabel: AxisLabel("#Flips", nil), yLabel: AxisLabel("Heads Fraction", nil))
+        self.plotModel.addLayer(xLabel: AxisLabel("#Flips", nil), yLabel: AxisLabel("Excess Heads", nil))
 
         for layerIndex in 0..<2 {
             for coinIndex in 0..<Self.coins.count {
