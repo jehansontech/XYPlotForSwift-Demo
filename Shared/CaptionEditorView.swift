@@ -10,7 +10,7 @@ import XYPlotForSwift
 
 struct CaptionEditorView: View {
 
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
 
     @ObservedObject var model: XYPlotModel
 
@@ -30,7 +30,7 @@ struct CaptionEditorView: View {
             }
             Button {
                 model.caption = captionText
-                presentationMode.wrappedValue.dismiss()
+                dismiss()
             } label: {
                 Text("Submit")
             }

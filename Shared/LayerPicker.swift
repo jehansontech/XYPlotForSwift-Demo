@@ -10,7 +10,7 @@ import XYPlotForSwift
 
 struct LayerPicker: View {
 
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
 
     @ObservedObject var model: XYPlotModel
 
@@ -21,7 +21,7 @@ struct LayerPicker: View {
             ForEach(model.layers.indices, id: \.self) { idx in
                 Button {
                     model.selectedLayer = idx
-                    presentationMode.wrappedValue.dismiss()
+                    dismiss()
                 } label: {
                     Text(model.layers[idx].title)
                         .padding(.leading)
