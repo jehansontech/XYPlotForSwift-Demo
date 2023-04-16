@@ -55,9 +55,13 @@ class SevenCoinsDemo: ObservableObject {
         self.plotModel.addLayer(xLabel: AxisLabel("#Flips", nil), yLabel: AxisLabel("Heads Fraction", nil))
         self.plotModel.addLayer(xLabel: AxisLabel("#Flips", nil), yLabel: AxisLabel("Excess Heads", nil))
 
+        for coinIndex in 0..<Self.coins.count {
+            self.plotModel.colors.registerColor(Self.colors[coinIndex], number: coinIndex)
+        }
+        
         for layerIndex in 0..<2 {
             for coinIndex in 0..<Self.coins.count {
-                self.plotModel.layers[layerIndex].addDataSet(Self.coins[coinIndex], Self.colors[coinIndex])
+                self.plotModel.layers[layerIndex].addDataSet(name: Self.coins[coinIndex], colorNumber: coinIndex)
             }
         }
         takeMeasurements()
