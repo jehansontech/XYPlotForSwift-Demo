@@ -36,8 +36,8 @@ extension View {
         if let view = controller.view {
             view.bounds = CGRect(origin: .zero, size: targetSize)
             // view.backgroundColor = .clear
-            let renderer = UIGraphicsImageRenderer(size: targetSize)
-            return renderer.image { _ in
+            let imageRenderer = UIGraphicsImageRenderer(size: targetSize)
+            return imageRenderer.image { _ in
                 view.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
             }
         }
